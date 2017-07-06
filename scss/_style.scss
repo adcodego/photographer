@@ -1,0 +1,162 @@
+.header{
+    width: 100%;
+    height: 3.12em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0px 0px 8px rgba($black, 0.3);
+    flex-wrap: wrap;
+    @include breakpoint(sm){
+        height: 4.5em;
+        flex-wrap: nowrap;
+    }
+    &__img{
+        margin-left: 1em;
+        margin-top: .5em;
+        @include breakpoint(sm){
+            margin-top: 0;
+        }
+        @include breakpoint(md){
+            margin-left: 2em;
+        }
+        img{
+            width: 70%;
+            @include breakpoint(md){
+                width: 100%;
+            }
+        }
+    }
+    &__btnmenu{
+        margin-right: 1em;
+        margin-top: .3em;
+        font-size: 1.2em;
+        color: $gray;
+        font-weight: lighter;
+        cursor: pointer;
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    &__menu{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        //top: -400px;
+        top: 3.12em;
+        left: 0;         
+        @include breakpoint(sm){
+            position: relative;
+            top: 0;
+            width: auto;
+        }
+    }
+    &__ul{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint(sm){
+            flex-direction: row;
+            & :last-child{
+                border-right: none;
+            }
+        }
+    }
+    &__list{
+        width: 90%;
+        font-size: 1.2em;
+        line-height: 3em;
+        text-align: center;
+        border-bottom: solid 1px $bg;
+        @include breakpoint(sm){
+            line-height: 1em;
+            border-bottom: none;
+            font-size: .8em;
+            border-right: solid 1px $bg;
+            padding: .3em 2.5em;
+        }
+        @include breakpoint(md){
+            font-size: .9em;
+        }
+        &:hover{
+            & > a {
+                color: $black;
+                text-decoration: none;
+            }
+        }
+    }
+    &__link{
+        color: $gray;
+        text-transform: uppercase;
+        position: relative;
+        @include breakpoint(sm){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        & > span {
+            margin-right: 0.3em;
+        }
+        &_active{
+            color: $black;
+        }
+        &_notify{
+            &::after{
+                content: "\2022 ";
+                color: $red;
+                position: absolute;
+                top: -.7em;
+                right: -.4em;
+                font-size: 1.6em;
+                display: block;
+                @include breakpoint(sm){
+                    content: "\2022 ";
+                    color: $red;
+                    position: absolute;
+                    top: -.3em;
+                    right: .7em;
+                    font-size: 1.6em;
+                    display: block;
+                }
+                
+            }
+        }
+    }
+    &__icon{
+        @include breakpoint(sm){
+            margin-bottom: 0.3em;
+            font-size: 1.1em;
+        }
+    }
+    &__unpload{
+        display: none;
+        @include breakpoint(sm){
+            display: block;
+            margin-right: 1em;
+        }
+        @include breakpoint(md){
+            margin-right: 2em;
+        }
+    }
+    &__btnup{
+        background-color: $blue;
+        border: none;
+        border-radius: 50px;
+       line-height: 2em;
+        padding: .4em 1.6em;
+        color: $white;
+        font-size: 0.6em;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include breakpoint(md){
+            font-size: .7em;
+            padding: .4em 3em;
+        }
+    }
+}
