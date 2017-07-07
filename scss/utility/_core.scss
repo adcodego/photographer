@@ -14,3 +14,7 @@ a:hover{
 ul{
     list-style: none;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+}

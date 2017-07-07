@@ -43,7 +43,8 @@
         display: flex;
         justify-content: center;
         position: absolute;
-        //top: -400px;
+        top: -400px;
+        display: none;
         top: 3.12em;
         left: 0;         
         @include breakpoint(sm){
